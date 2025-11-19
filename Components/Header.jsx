@@ -1,12 +1,15 @@
 import { assets } from "@/Assets/assets";
 import Image from "next/image";
 import React from "react";
+import Navbar from "@/components/Navbar";
+
 
 const Header = () => {
   return (
     <header className="py-6 px-5 md:px-12 lg:px-28">
+      <Navbar />
       {/* Top Bar */}
-      <div className="flex justify-between items-center">
+      {/* <div className="flex justify-between items-center">
         <Image
           src={assets.logo}
           alt="Logo"
@@ -19,7 +22,7 @@ const Header = () => {
           Get Started
           <Image src={assets.arrow} alt="Arrow" width={18} height={18} />
         </button>
-      </div>
+      </div> */}
 
       {/* Hero Section */}
       <div className="text-center mt-12">
