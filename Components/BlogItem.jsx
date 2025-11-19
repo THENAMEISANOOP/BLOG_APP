@@ -2,7 +2,7 @@ import { assets, blog_data } from "@/Assets/assets";
 import Image from "next/image";
 import React from "react";
 
-const BlogItem = () => {
+const BlogItem = ({title,description,category,image}) => {
   const item = blog_data[0];
 
   if (!item) return null; // Prevent SSR mismatch
@@ -12,7 +12,7 @@ const BlogItem = () => {
       
       <div className="w-full h-48 overflow-hidden rounded-lg">
         <Image
-          src={item.image}
+          src={image}
           alt="blog image"
           width={400}
           height={300}
@@ -22,9 +22,14 @@ const BlogItem = () => {
       </div>
 
       <div className="mt-4">
-        <h2 className="text-lg font-semibold mb-1">{item.title}</h2>
+        {category && (
+          <span className="text-xs bg-black text-white px-2 py-1 rounded-full">
+            {category}
+          </span>
+        )}
+        <h2 className="text-lg font-semibold mb-1">{title}</h2>
         <p className="text-gray-600 text-sm line-clamp-3">
-          {item.description}
+          {description}
         </p>
       </div>
 
